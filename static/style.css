@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 body {
@@ -76,4 +77,34 @@ body {
   gap: 20px;
   justify-content: center;
   margin: 20px;
+}
+
+.contact-form {
+  padding: 100px;
+  font-size: larger;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+}
+.contact-form input[type="number"] {
+  border: 5px solid red;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.contact-form input[type="submit"] {
+  color: white;
+  background: blue;
+  width: 100px;
+  height: 50px;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+}
+
+.contact-form input[type="submit"]:hover {
+  color: blue;
+  background: #ffffff;
+  cursor: pointer;
 }
