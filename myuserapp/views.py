@@ -21,16 +21,15 @@ def contactprocess(request):
     a = int(request.POST['txt1'])
     b = int(request.POST['txt2'])
     c = a + b
-    msg = "A value is",a,"B value is",b,"Sum is ",c
 
     r = ""
-    if c > 180 and c < 200:
+    if 180 >= c <= 200:
         r = "you scored A+"
-    elif c > 150 and c < 180:
+    elif 150 >= c <= 180:
         r = "you scored B+"
-    elif c > 100 and c < 150:
+    elif 100 >= c <= 150:
         r = "you scored C+"
-    elif c > 50 and c < 100:
+    elif 50 >= c <= 100:
         r = "you scored D+"
     else:
         r = "better luck next time"
