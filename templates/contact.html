@@ -12,7 +12,7 @@
     {% include 'menus.html' %}
     <h1>contact page</h1>
     <form method="post" action="/contactprocess">
-      {% csrf_token %} No1 :
+      {% csrf_token %} subject1 :
       <input
         type="number"
         min="1"
@@ -21,7 +21,7 @@
         required
         autocomplete="off"
       />
-      No2 :
+      subject2 :
       <input
         type="number"
         min="1"
