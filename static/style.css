@@ -108,3 +108,38 @@ body {
   background: #ffffff;
   cursor: pointer;
 }
+
+.login-page {
+  width: 250px;
+  height: 400px;
+  display: flex;
+  margin: 10vh;
+}
+
+.login-page input[type="email"] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login-page input[type="submit"] {
+  color: white;
+  background: blue;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+}
+
+.login-page input[type="submit"]:hover {
+  color: blue;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.login-page input[type="email"] {
+  height: 30px;
+  border-radius: 20px;
+}

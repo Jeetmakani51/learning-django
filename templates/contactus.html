@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/process" method="post">
+      {% csrf_token %} To : <input type="text" name="txt1" /> Subject :
+      <input type="text" name="txt2" /> Body : <input type="text" name="txt3" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

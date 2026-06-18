@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 
 def homepage(request):
@@ -70,3 +72,14 @@ def dashboard(request):
 def logout(request):
     del request.session['emaillogin']
     return redirect(loginPage)
+
+def contactPageView(request):
+    return render(request,'contactus.html')
+
+def mailsendprocess(request):
+    subject = request.POST['txt2']
+    message = request.POST['txt3']
+    recipient_list = [request.POST['txt1']]
+    email_from = settings.EMAIL_HOST_USER
+    send_mail(subject,message,email_from,recipient_list)
+    return HttpResponse('Male Sent')

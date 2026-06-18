@@ -16,4 +16,6 @@ urlpatterns = [
     path('loginProcess',views.loginProcess),
     path('dashboard',views.dashboard),
     path('logout',views.logout),
+    path('contactus',views.contactPageView),
+    path('process',views.mailsendprocess),
 ]

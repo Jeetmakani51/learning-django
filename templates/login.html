@@ -1,16 +1,24 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>login</title>
   </head>
   <body>
-    <form action="/loginProcess" method="post">
-      {% csrf_token %}
-      <h1>fill your details</h1>
-      <input type="email" name="myemail" placeholder="enter your email" />
-      <input type="submit" />
-    </form>
+    <div class="login-page">
+      <form action="/loginProcess" method="post">
+        {% csrf_token %}
+        <h1>fill your details</h1>
+        <input
+          type="email"
+          name="myemail"
+          placeholder="enter your email"
+        /><br />
+        <input type="submit" />
+      </form>
+    </div>
   </body>
 </html>
