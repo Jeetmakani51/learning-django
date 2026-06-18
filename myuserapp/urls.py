@@ -11,5 +11,9 @@ urlpatterns = [
     path('contactprocess',views.contactprocess),
     path('saveSession',views.saveSessionData),
     path('getSession',views.getSessionData),
-    path('removeSession', views.removeSessionData)
+    path('removeSession', views.removeSessionData),
+    path('login',views.loginPage),
+    path('loginProcess',views.loginProcess),
+    path('dashboard',views.dashboard),
+    path('logout',views.logout),
 ]

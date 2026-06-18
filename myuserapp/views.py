@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 # Create your views here.
 
@@ -49,3 +49,24 @@ def getSessionData(request):
 def removeSessionData(request):
     del request.session['username']
     return HttpResponse("session deleted")
+
+def loginPage(request):
+    return render(request,'login.html')
+
+def loginProcess(request):
+    txt1 = request.POST['myemail']
+    request.session['emaillogin'] = txt1
+    if(request.session.has_key('emaillogin')):
+        return render(request,'dashboard.html')
+    else:
+        return redirect(request,'login.html')
+    
+def dashboard(request):
+    if request.session.has_key('emaillogin'):
+        return render(request,'dashboard.html')
+    else:
+        return redirect(request,'login.html')
+    
+def logout(request):
+    del request.session['emaillogin']
+    return redirect(loginPage)
