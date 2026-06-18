@@ -23,13 +23,13 @@ def contactprocess(request):
     c = a + b
 
     r = ""
-    if 180 >= c <= 200:
+    if 180 <= c <= 200:
         r = "you scored A+"
-    elif 150 >= c <= 180:
+    elif 150 <= c < 180:
         r = "you scored B+"
-    elif 100 >= c <= 150:
+    elif 100 <= c < 150:
         r = "you scored C+"
-    elif 50 >= c <= 100:
+    elif 50 <= c < 100:
         r = "you scored D+"
     else:
         r = "better luck next time"
