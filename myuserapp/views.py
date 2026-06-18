@@ -34,3 +34,18 @@ def contactprocess(request):
     else:
         r = "better luck next time"
     return render(request,'ans.html',{'subject1':a,'subject2':b,'total':c,'result':r})
+
+def saveSessionData(request):
+    request.session['username'] = "Jeet"
+    return HttpResponse("session created")
+
+def getSessionData(request):
+    if request.session.has_key('username'):
+        msg = request.session['username']
+        return HttpResponse(msg)
+    else:
+        return HttpResponse("session not found")
+
+def removeSessionData(request):
+    del request.session['username']
+    return HttpResponse("session deleted")

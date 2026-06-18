@@ -9,4 +9,7 @@ urlpatterns = [
     path('gallery',views.gallerypage),
     path('shop',views.shoppage),
     path('contactprocess',views.contactprocess),
+    path('saveSession',views.saveSessionData),
+    path('getSession',views.getSessionData),
+    path('removeSession', views.removeSessionData)
 ]
