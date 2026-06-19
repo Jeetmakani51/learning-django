@@ -20,4 +20,6 @@ urlpatterns = [
     path('process',views.mailsendprocess),
     path('student',views.studentpage),
     path('add-student-process',views.addstudent),
+    path('getstudent',views.getstudent),
+    path('deletestudent/<int:id>',views.deletestudent),
 ]

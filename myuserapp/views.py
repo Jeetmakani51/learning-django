@@ -93,14 +93,22 @@ def addstudent(request):
     txt2 = request.POST['txt2']
     txt3 = request.POST['txt3']
 
-    send_mail(
-        "New Student Registration",  # Subject
-        f"Name : {txt1}\n"
-        f"Number : {txt2}\n"
-        f"Email : {txt3}",
-        settings.EMAIL_HOST_USER,    # From email
-        [settings.EMAIL_HOST_USER],  # Recipient list
-        fail_silently=False,
-    )
+    Student.objects.create(name = txt1, mobile = txt2, email = txt3)
+    return redirect(getstudent)
+    # send_mail(
+    #     "New Student Registration",  # Subject
+    #     f"Name : {txt1}\n"
+    #     f"Number : {txt2}\n"
+    #     f"Email : {txt3}",
+    #     settings.EMAIL_HOST_USER,    # From email
+    #     [settings.EMAIL_HOST_USER],  # Recipient list
+    #     fail_silently=False,
+    # )
 
-    return render(request, "student.html")
+def getstudent(request):
+    myStudentList = Student.objects.all()
+    return render(request,'getstudent.html',{'mydata' : myStudentList})
+
+def deletestudent(request,id):
+    Student.objects.get(id=id).delete();
+    return redirect(getstudent)

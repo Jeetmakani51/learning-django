@@ -143,3 +143,21 @@ body {
   height: 30px;
   border-radius: 20px;
 }
+
+.student-form input[type="number"] {
+  border: 5px solid red;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.student-form input[type="text"] {
+  border: 5px solid red;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.student-form input[type="email"] {
+  border: 5px solid red;
+  margin-bottom: 20px;
+  color: black;
+}
