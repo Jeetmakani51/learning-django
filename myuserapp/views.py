@@ -80,7 +80,7 @@ def contactPageView(request):
 def mailsendprocess(request):
     subject = request.POST['txt2']
     message = request.POST['txt3']
-    recipient_list = [request.POST['txt1']]
+    recipient_list = ['j@gmail.com']
     email_from = settings.EMAIL_HOST_USER
     send_mail(subject,message,email_from,recipient_list)
     return HttpResponse('Male Sent')
@@ -92,5 +92,15 @@ def addstudent(request):
     txt1 = request.POST['txt1']
     txt2 = request.POST['txt2']
     txt3 = request.POST['txt3']
-    Student.objects.create(name = txt1, mobile = txt2, email = txt3)
-    return HttpResponse("thank you for sign up")
+
+    send_mail(
+        "New Student Registration",  # Subject
+        f"Name : {txt1}\n"
+        f"Number : {txt2}\n"
+        f"Email : {txt3}",
+        settings.EMAIL_HOST_USER,    # From email
+        [settings.EMAIL_HOST_USER],  # Recipient list
+        fail_silently=False,
+    )
+
+    return render(request, "student.html")
