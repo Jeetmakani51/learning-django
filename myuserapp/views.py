@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
+from . models import Student
 # Create your views here.
 
 def homepage(request):
@@ -83,3 +84,13 @@ def mailsendprocess(request):
     email_from = settings.EMAIL_HOST_USER
     send_mail(subject,message,email_from,recipient_list)
     return HttpResponse('Male Sent')
+
+def studentpage(request):
+    return render(request,'student.html')
+
+def addstudent(request):
+    txt1 = request.POST['txt1']
+    txt2 = request.POST['txt2']
+    txt3 = request.POST['txt3']
+    Student.objects.create(name = txt1, mobile = txt2, email = txt3)
+    return HttpResponse("thank you for sign up")

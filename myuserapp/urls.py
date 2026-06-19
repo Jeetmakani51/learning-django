@@ -18,4 +18,6 @@ urlpatterns = [
     path('logout',views.logout),
     path('contactus',views.contactPageView),
     path('process',views.mailsendprocess),
+    path('student',views.studentpage),
+    path('add-student-process',views.addstudent),
 ]
