@@ -1,11 +1,14 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>student</title>
   </head>
   <body>
+    {% include 'menus.html' %}
     <form action="/add-student-process" method="post">
       {% csrf_token %} Name : <input type="text" name="txt1" /> Number :
       <input type="number" name="txt2" /> Email :
